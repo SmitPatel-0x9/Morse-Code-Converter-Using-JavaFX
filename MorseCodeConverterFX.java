@@ -6,9 +6,6 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyCodeCombination;
-import javafx.scene.input.KeyCombination;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,17 +18,34 @@ public class MorseCodeConverterFX extends Application {
     public void start(Stage primaryStage) {
         morseCodeMap = createMorseCodeMap();
 
-        // Input field and output area
+        // Input and output fields with labels
+        Label inputLabel = new Label("Input Text:");
         TextField inputField = new TextField();
+        Label outputLabel = new Label("Converted Text:");
         TextArea outputArea = new TextArea();
         outputArea.setEditable(false);
 
-        // Buttons
+        // Buttons for conversion
         Button toMorseButton = new Button("To Morse");
         Button toEnglishButton = new Button("To English");
+
+        // Clipboard and clear buttons
         Button copyButton = new Button("Copy Output");
         Button pasteButton = new Button("Paste Text");
+        Button clearInputButton = new Button("Clear Input");
+        Button clearOutputButton = new Button("Clear Output");
+
+        // Morse code sheet button
         Button sheetButton = new Button("Morse Code Sheet");
+
+        // Set tooltips for buttons
+        toMorseButton.setTooltip(new Tooltip("Convert text to Morse code"));
+        toEnglishButton.setTooltip(new Tooltip("Convert Morse code to English"));
+        copyButton.setTooltip(new Tooltip("Copy the output text to clipboard"));
+        pasteButton.setTooltip(new Tooltip("Paste text from clipboard"));
+        clearInputButton.setTooltip(new Tooltip("Clear the input field"));
+        clearOutputButton.setTooltip(new Tooltip("Clear the output field"));
+        sheetButton.setTooltip(new Tooltip("View the Morse Code sheet"));
 
         // Event handlers
         toMorseButton.setOnAction(e -> {
@@ -59,14 +73,21 @@ public class MorseCodeConverterFX extends Application {
             }
         });
 
+        clearInputButton.setOnAction(e -> inputField.clear());
+        clearOutputButton.setOnAction(e -> outputArea.clear());
+
         sheetButton.setOnAction(e -> showMorseCodeSheet());
 
-        // Layout
-        VBox layout = new VBox(10);
-        layout.setPadding(new Insets(10));
-        layout.getChildren().addAll(inputField, outputArea, toMorseButton, toEnglishButton, copyButton, pasteButton, sheetButton);
+        // Layout adjustments with HBox and VBox
+        HBox conversionBox = new HBox(10, toMorseButton, toEnglishButton);
+        HBox clipboardBox = new HBox(10, copyButton, pasteButton, clearInputButton, clearOutputButton);
 
-        Scene scene = new Scene(layout, 400, 300);
+        VBox layout = new VBox(10);
+        layout.setPadding(new Insets(15));
+        layout.getChildren().addAll(inputLabel, inputField, conversionBox, outputLabel, outputArea, clipboardBox, sheetButton);
+
+        // Scene and stage setup
+        Scene scene = new Scene(layout, 450, 400);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Morse Code Converter");
         primaryStage.show();
