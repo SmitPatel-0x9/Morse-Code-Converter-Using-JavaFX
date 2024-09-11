@@ -34,10 +34,10 @@ Usage
    5. View Morse Code Sheet: Click "Morse Code Sheet" to open a window displaying a reference sheet of Morse code.
 
 Screenshots
-   -Main Application Window ["C:\Pictures\Screenshots\Main Application Window.png"]
-   -English to Morse Code Conversion ["C:\Pictures\Screenshots\English to Morse Code.png"]
-   -Morse Code to English Conversion ["C:\Pictures\Screenshots\Morse Code to English.png"]
-   -Morse Code Sheet ["C:\Pictures\Screenshots\Morse Code sheet.png"]
+   -Main Application Window [Main Application Window.png]
+   -English to Morse Code Conversion [English to Morse Code.png]
+   -Morse Code to English Conversion [Morse Code to English.png]
+   -Morse Code Sheet [Morse Code sheet.png]
 
 Authors
    Smit Patel
