@@ -12,8 +12,8 @@ Features
 
 Installation
    1. Clone the repository:
-      git clone https://github.com/SmitPatel-0x9/MorseCodeConverter.git
-      cd MorseCodeConverter
+      git clone https://github.com/SmitPatel-0x9/Morse-Code-Converter-Using-JavaFX.git
+      cd MorseCodeConverterFX
 
    2. Set up JavaFX:
       Make sure you have JavaFX set up in your development environment.
