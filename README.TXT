@@ -14,7 +14,7 @@ Installation
 
    1. Clone the repository:
       ```bash
-      git clone https://github.com/yourusername/MorseCodeConverter.git
+      git clone https://github.com/SmitPatel-0x9/MorseCodeConverter.git
       cd MorseCodeConverter
 
    2. Set up JavaFX:
