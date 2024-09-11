@@ -11,9 +11,7 @@ Features
    - Morse Code Sheet: View a reference sheet showing Morse code for each letter and number.
 
 Installation
-
    1. Clone the repository:
-      ```bash
       git clone https://github.com/SmitPatel-0x9/MorseCodeConverter.git
       cd MorseCodeConverter
 
